@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta name="description" content="moo">
+	<meta name="keywords" content="stuff"><title>foo</title>	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel="stylesheet" type="text/css" href="css/page.css" />
+	<link rel="stylesheet" type="text/css" href="css/grid.css" />
+
+	<script type="text/javascript" src="js/mootools.js"></script>
+	<script type="text/javascript" src="js/util.js"></script>
+	<script type="text/javascript" src="js/backbutton.js"></script>
+	<script type="text/javascript" src="js/grid.js"></script>
+	
+<script type='text/javascript'>
+//<![CDATA[
+window.addEvent('domready', createGrid);
+
+var manager;
+function createGrid(){
+
+
+	if(manager)return;
+	manager = new GridManager();
+	// horizontal grid...
+	// xxxxxx
+	manager.add({name:'HORIZONTAL', columns:100, spacing:10, pages:[
+	{url:'data/page1.xml', name:'HOME1'},
+	{url:'data/page11.xml', name:'HOME2'},
+	{url:'data/page111.xml', name:'HOME3'},
+	{url:'data/page1111.xml', name:'HOME4'},
+	{url:'data/page11.xml', name:'HOME5'},
+	{url:'data/page111.xml', name:'HOME6'}
+	]});
+	// vertical
+	/*
+		x
+		x
+		x
+		x
+	*/
+	manager.add({name:'VERTICAL', columns:1, spacing:10, pages:[
+	{url:'data/page2.xml', name:'LINK PAGE X'},
+	{url:'data/page22.xml', name:'LINK PAGE X'},
+	{url:'data/page222.xml', name:'LINK PAGE X'},
+	{url:'data/page2222.xml', name:'LINK PAGE X'},
+	{url:'data/page22.xml', name:'LINK PAGE X'}
+	]});
+	// checker
+	/*
+	x 0 x
+	0 x 0
+	x 0 x 
+	*/
+	manager.add({name:'CHECKER', columns:3, spacing:10, pages:[
+	{url:'data/page3.xml', name:'HOME'},	
+	null,
+	{url:'data/page33.xml', name:'HOME'},
+	
+	null,
+	{url:'data/page333.xml', name:'HOME'},
+	null,
+
+	{url:'data/page3333.xml', name:'HOME'},
+	null,
+	{url:'data/page3.xml', name:'HOME'}
+	]});
+	// cross
+	/*
+	0 x 0
+	x x x
+	0 x 0 
+	*/
+	manager.add({name:'CROSS', columns:3, spacing:10, pages:[
+		null,
+		{url:'data/page4.xml', name:'HOME'},	
+		null,
+	
+	{url:'data/page44.xml', name:'HOME'},
+	{url:'data/page444.xml', name:'HOME'},
+	{url:'data/page4444.xml', name:'HOME'},
+
+		null,
+		{url:'data/page4.xml', name:'HOME'},	
+		null
+	]});	
+
+	// cross
+	/*
+	x x x
+	x x x
+	x x x 
+	*/
+	manager.add({name:'BLOCK', columns:3, spacing:10, pages:[
+		{url:'data/page1.xml', name:'HOME'},
+		{url:'data/page2.xml', name:'HOME'},	
+		{url:'data/page3.xml', name:'HOME'},
+	
+	{url:'data/page4.xml', name:'HOME'},
+	{url:'data/page11.xml', name:'HOME'},
+	{url:'data/page22.xml', name:'HOME'},
+
+		{url:'data/page33.xml', name:'HOME'},
+		{url:'data/page44.xml', name:'HOME'},	
+		{url:'data/page444.xml', name:'HOME'}
+	]});
+	var a = $$('#navigation a');
+	a.each(function(i){
+		i.addEvent('click', manager.activate.bind(manager, [i.innerHTML]));		
+	});
+
+	if(!manager.active){
+		if((hash = location.hash.substring(1)))
+		{
+			if(manager.hash(hash)){return;}
+		}
+		manager.activate('HORIZONTAL');	
+	}
+
+}
+
+
+
+
+//]]> 
+</script>
+
+</head>
+<body>
+<div id="navigation">
+			<ul>
+				<li><a href="javascript://click to activate HORIZONTAL grid">HORIZONTAL</a></li>
+				<li><a href="javascript://click to activate VERTICAL grid">VERTICAL</a></li>
+				<li><a href="javascript://click to activate CHECKER grid">CHECKER</a></li>
+				<li><a href="javascript://click to activate CROSS grid">CROSS</a></li>
+				<li><a href="javascript://click to activate BLOCK grid">BLOCK</a></li>
+			</ul>
+</div>
+<div id="footer">
+	&copy;2007 m.j.milicevic
+</div>
+
+</body>
+</html>

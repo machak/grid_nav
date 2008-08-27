@@ -1,0 +1,136 @@
+body ,html{
+	width:100%;
+	height:100%;
+	font-family: verdana, arial, Helvetica, sans-serif;
+	background-color:#1A1A1A;
+	background-color:#333333;
+	background-color:#404040;
+	color: #333A46;
+	font-size: 12px;
+	line-height: 14px;
+	margin: 0;
+	padding:0;
+	overflow:hidden !important;
+}
+img{border:0;}
+ul,li,p{margin:0;padding:0;}
+
+a{
+	color: #959595;
+	display: block;
+	text-decoration: none;
+	font-weight: 600;
+	letter-spacing: 1px;
+	font-size: 12px;
+	margin: 0;
+
+}
+a:visited  {
+color: #5E768E; 
+}
+a:link  {
+color: #5E768E;
+}
+a:active {
+	color: #AFB8BC;
+	background-color: #FFCC00;
+}
+a:hover   {	
+	color: #333333;
+	background-color: #FFCC00;
+}
+#footer
+{
+	position: absolute;
+	vertical-align: middle;
+	display: table-cell;
+	text-align: center;
+	height: 15px;
+	line-height: 15px;
+	background-color: #434C5B;
+	background-color: #99CC00;
+	background-color: #BFD849;
+
+	width: 100%;
+	
+	bottom: 0px;
+	z-index:100;
+	border-top:  1px solid #000;
+	color: #5E768E;
+	color: #333A46;
+	font-size: 9px;
+}
+
+#navigation
+{
+	position: absolute;
+	vertical-align: middle;
+	display: table-cell;
+	text-align: center;
+	height: 22px;
+	line-height: 15px;
+	background-color: #000;
+	background-color: #1B1B1B;
+	width: 100%;
+	z-index:1000;
+	vertical-align: middle;
+	display: table-cell;
+	text-align: center;
+	border-bottom:  1px solid #99CC00;
+}
+#navigation ul
+{
+	
+	margin:0px;
+	padding:0px;
+	display:inline;
+	margin-left: auto;
+    margin-right: auto;
+	text-align: center;
+
+
+}
+#navigation ul li {
+	
+		list-style-type: none;
+		float: left;
+		margin:0;
+		height:22px;
+		display:inline;
+	
+}
+#navigation ul li a
+{
+	color: #959595;
+	color: #9CAA4D;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 2px;
+	display: block;
+	float: left;
+	text-decoration: none;
+	font-weight: 600;
+	letter-spacing: 1px;
+	font-size: 10px;
+	margin: 0;
+	height:100%;	
+	width: auto;
+	
+}
+
+#navigation ul li a:hover
+{
+	color: #333333;
+	background-color: #FFCC00;
+}
+
+#navigation ul li a:focus
+{
+	color: #FFF;
+	background-color: #99CC00!important;
+}
+#navigation ul li a:active 
+{
+	color: #434C5B;
+	background-color: #FFCC00;
+}
