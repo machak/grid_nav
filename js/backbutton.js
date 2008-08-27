@@ -1,6 +1,16 @@
 /**
-	@author m.j.milicevic
-	ported script from jsquery..not really tested.. ;-) 
+* Copyright (c) 2008, m.j.milicevic <me at machak.com>
+*
+* Permission to use, copy, modify, distribute and sell this software
+* and its documentation for any purpose is hereby granted without fee,
+* provided that the above copyright notice appears in all copies and
+* that both that copyright notice and this permission notice appear
+* in supporting documentation.  Silicon Graphics makes no
+* representations about the suitability of this software for any
+* purpose.  It is provided "as is" without express or implied warranty.
+*/
+/**
+	ported script from jsquery..not really tested.. ;-)
 */
 var backButton = {
 	e: { hash: '', type: 'init'},
@@ -18,7 +28,7 @@ var backButton = {
     },
     makeIframe: function(){
         if(window.ie){
-			var iframe = new Element('iframe',{'id':'moobbfr'}).setStyle('display','none').injectInside(document.body);			
+			var iframe = new Element('iframe',{'id':'moobbfr'}).setStyle('display','none').injectInside(document.body);
 			iframe = $('moobbfr').contentWindow.document;
             iframe.open();
             iframe.close();
@@ -29,29 +39,29 @@ var backButton = {
     {
 		this.current = hash;
 		var newhash = '#' + hash;
-		location.hash = newhash;		
+		location.hash = newhash;
         if(window.ie){
 			var iframe = $('moobbfr').contentWindow.document;
             iframe.open();
 			iframe.close();
             iframe.location.hash = newhash;
         }
-    },    
-    checker: function() 
-    {	
+    },
+    checker: function()
+    {
 		var hash;
         if(window.ie){
 			var iframe = $('moobbfr').contentWindow.document;
 			var current_hash = iframe.location.hash;
 			if((hash = current_hash.substring(1)) != this.current) {
 				location.hash = current_hash;
-			    this.trigger(hash);              
+			    this.trigger(hash);
             }
         }
         else {
 			if((hash = location.hash.substring(1)) != this.current)
-	            this.trigger(hash);		   	        
-	     }        
+	            this.trigger(hash);
+	     }
      },
 	trigger: function(hash) {
 		this.current = hash;
