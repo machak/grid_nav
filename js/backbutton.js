@@ -5,7 +5,7 @@
 * and its documentation for any purpose is hereby granted without fee,
 * provided that the above copyright notice appears in all copies and
 * that both that copyright notice and this permission notice appear
-* in supporting documentation.  Silicon Graphics makes no
+* in supporting documentation.  Author (m.j.milicevic) makes no
 * representations about the suitability of this software for any
 * purpose.  It is provided "as is" without express or implied warranty.
 */
